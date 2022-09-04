@@ -1,13 +1,12 @@
 import React, { useState, useEffect, Suspense, lazy } from "react";
 import { fetchTemplates } from "../../utils/Functions";
 import { COLOURS } from "../../constants/Constants";
-// import Spinner from "../loaders/Spinner";
 import Placeholder from "../loaders/Placeholder";
 
 const Template = lazy(() => import("./Template"));
 
 function TemplateList() {
-  const [templates, setTemplates] = useState(() => fetchTemplates());
+  const [templates, setTemplates] = useState([]);
   useEffect(() => {
     let templatesFromStore = fetchTemplates();
     setTemplates(templatesFromStore);

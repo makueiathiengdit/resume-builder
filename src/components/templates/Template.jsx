@@ -3,7 +3,10 @@ import React from "react";
 function Template({ template, color }) {
   return (
     <>
-      <a className={`${color} card`} href={template.name + "-" + template.id}>
+      <a
+        className={`${color} card`}
+        href={"create?template=" + template.name + "-" + template.id}
+      >
         <div className="content">
           <div className="header">{template.name}</div>
           <div className="image">
@@ -11,6 +14,7 @@ function Template({ template, color }) {
               className="ui medium rounded image"
               src={template.image}
               alt={template.name}
+              loading="lazy"
             />
           </div>
         </div>

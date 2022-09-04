@@ -1,7 +1,16 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
 function useWindow() {
-  return <div>useWindow</div>;
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const checkScreenSize = () => {
+    setIsSmallScreen(window.innerWidth < 600);
+  };
+  useEffect(() => {
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, [isSmallScreen]);
+  return isSmallScreen;
 }
 
 export default useWindow;
