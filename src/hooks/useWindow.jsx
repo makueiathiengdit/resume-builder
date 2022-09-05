@@ -4,6 +4,7 @@ function useWindow() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const checkScreenSize = () => {
     setIsSmallScreen(window.innerWidth < 600);
+    console.log("is mobile: ", isSmallScreen);
   };
   useEffect(() => {
     checkScreenSize();

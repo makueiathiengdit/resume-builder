@@ -1,15 +1,12 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Button from "../../components/common/button/Button";
-
 import Input from "../../components/common/input/Input";
-import useTitle from "../../hooks/useTitle";
-function Login() {
-  const [, ,] = useTitle("Login");
+import Button from "../../components/common/button/Button";
+function ChangePassword() {
   const Redirect = useNavigate();
   const handleClick = () => {
-    console.log("Redirecting to home...");
-    Redirect("/home");
+    console.log("Redirecting to login...");
+    Redirect("/login");
   };
   return (
     <div className="ui container">
@@ -21,15 +18,8 @@ function Login() {
         <div className="ui raised centered card">
           <div className="ui content">
             <div className="ui form">
-              <h3 className="ui horizontal divider header">Login</h3>
+              <h3 className="ui horizontal divider header">Change Password</h3>
               <div className="ui field">
-                <Input
-                  id="username"
-                  label="Username"
-                  type="text"
-                  placeholder="e.g deng@gmail.com"
-                  required={true}
-                />
                 <Input
                   id="password"
                   label="Password"
@@ -37,16 +27,22 @@ function Login() {
                   placeholder="Enter your password"
                   required={true}
                 />
-                <Link to="/forgot-password">Forgot Password?</Link>
+                <Input
+                  id="password"
+                  label="Confirm Password"
+                  type="password"
+                  placeholder="Enter your password"
+                  required={true}
+                />
               </div>
               <div className="ui field">
-                <Button text="Login" onClick={handleClick} />
+                <Button text="Change Password" onClick={handleClick} />
               </div>
             </div>
             <br></br>
             <div className="extra content">
               <span className="text blue">
-                New here? <Link to="/sign-up">Sign up</Link>
+                New here? <Link to="/login">Login</Link>
               </span>
             </div>
           </div>
@@ -56,4 +52,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default ChangePassword;

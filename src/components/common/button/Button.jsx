@@ -1,8 +1,8 @@
 import React from "react";
 
-function Button({ text, onClick }) {
+function Button({ text, onClick, classList = "ui fluid primary button" }) {
   return (
-    <button onClick={onClick} className="ui fluid primary button">
+    <button onClick={onClick} className={classList}>
       {text}
     </button>
   );

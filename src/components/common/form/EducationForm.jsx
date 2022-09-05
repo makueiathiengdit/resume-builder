@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../button/Button";
+import NextButton from "../button/NextButton";
 import Input from "../input/Input";
 function EducationForm() {
   let dummyData = {};
@@ -33,6 +34,8 @@ function EducationForm() {
         />
         <Button text="Add" />
       </div>
+      <NextButton text={"Prev"} direction="left" />
+      <NextButton text={"Next"} />
     </div>
   );
 }

@@ -3,7 +3,7 @@ function useTitle(title) {
   const [docTitle, setDocTitle] = useState(title);
   useEffect(() => {
     document.title = docTitle;
-    console.log(document.title);
+    // console.log(document.title);
   }, [docTitle]);
 
   return [docTitle, setDocTitle];
