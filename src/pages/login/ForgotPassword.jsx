@@ -25,9 +25,8 @@ function ForgotPassword() {
             <FormWrapper title="Reset password">
               <div className="meta">
                 <p>
-                  Forgot your account's password or having trouble logging into
-                  your Team? Enter your email address and we'll send you a
-                  recovery link.
+                  Forgot your account's password? Enter your email address and
+                  we'll send you a recovery link.
                 </p>
               </div>
               <br></br>

@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Input({
   id,
   label,
   type,
   value,
-  required,
+  required = true,
   placeholder,
-  onChange,
   onBlur,
 }) {
+  const [_value, setValue] = useState("");
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
   return (
     <div className="ui field">
       <label htmlFor={id}>
@@ -20,10 +23,17 @@ function Input({
           id={id}
           placeholder={placeholder}
           required={required}
-          onChange={onChange}
-          onBlur={onBlur}
+          onChange={handleChange}
+          onBlur={() => {
+            onBlur(id, _value);
+          }}
         />
       </label>
+      {_value.length === 0 && required && (
+        <span className="ui pointing red basic mini label">
+          field cannot be empty
+        </span>
+      )}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Input from "../../components/common/input/Input";
 import Button from "../../components/common/button/Button";
 function ChangePassword() {
@@ -18,7 +18,7 @@ function ChangePassword() {
         <div className="ui raised centered card">
           <div className="ui content">
             <div className="ui form">
-              <h3 className="ui horizontal divider header">Change Password</h3>
+              <h3 className="ui horizontal divider header">Create Password</h3>
               <div className="ui field">
                 <Input
                   id="password"
@@ -39,12 +39,12 @@ function ChangePassword() {
                 <Button text="Change Password" onClick={handleClick} />
               </div>
             </div>
-            <br></br>
-            <div className="extra content">
+
+            {/* <div className="extra content">
               <span className="text blue">
                 New here? <Link to="/login">Login</Link>
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

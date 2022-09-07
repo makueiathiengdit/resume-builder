@@ -56,6 +56,7 @@ function Signup() {
                       placeholder="e.g Garang"
                       passedValue={data.firstname}
                       onBlur={handleBlur}
+                      required={true}
                     />
                     <Input
                       label="Last Name"
@@ -64,6 +65,7 @@ function Signup() {
                       placeholder="e.g Garang"
                       passedValue={data.lastname}
                       onBlur={handleBlur}
+                      required={true}
                     />
                     <Input
                       label="Email Address"
@@ -72,6 +74,7 @@ function Signup() {
                       placeholder="e.g garang@gmail.com"
                       passedValue={data.email}
                       onBlur={handleBlur}
+                      required={true}
                     />
                     <Input
                       label="Password"
@@ -80,6 +83,7 @@ function Signup() {
                       placeholder="Enter password"
                       passedValue={data.password}
                       onBlur={handleBlur}
+                      required={true}
                     />
                     <Input
                       label="Confirm Password"
@@ -88,6 +92,7 @@ function Signup() {
                       placeholder="Enter confirm password"
                       passedValue={data.password}
                       onBlur={handleBlur}
+                      required={true}
                     />
                     <div>
                       <Button text="Sign Up" onClick={clickHandler} />
