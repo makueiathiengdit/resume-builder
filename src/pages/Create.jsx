@@ -6,6 +6,7 @@ import FormWrapper from "../components/common/form/FormWrapper";
 import PersonalInfoForm from "../components/common/form/PersonalInfoForm";
 import ErrorBoundary from "../components/errors/ErrorBoundary";
 import useTitle from "../hooks/useTitle";
+import Header from "../layout/header/Header";
 
 function Create() {
   let [params] = useSearchParams();
@@ -13,6 +14,11 @@ function Create() {
   console.log(params.get("template"));
   return (
     <>
+      <div className="ui container">
+        <Header />
+      </div>
+      <br></br>
+      <br></br>
       <div className="ui three column grid">
         <div className="four wide column">
           this column will container vertical stepper in case of mobile devices

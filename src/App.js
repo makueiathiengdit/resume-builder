@@ -8,6 +8,8 @@ import ChangePassword from "./pages/login/ChangePassword";
 
 import Signup from "./pages/signup/Signup";
 import Create from "./pages/Create";
+import Explore from "./pages/Explore";
+
 import PageNotFound from "./components/errors/PageNotFound";
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="sign-up" element={<Signup />} />
           <Route path="create" element={<Create />} />
+          <Route path="explore" element={<Explore />} />
+
           <Route path="forgot-password" element={<ForgotPassword />} />
           <Route path="change-password" element={<ChangePassword />} />
 
