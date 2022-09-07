@@ -4,6 +4,7 @@ import Button from "../../components/common/button/Button";
 
 import Input from "../../components/common/input/Input";
 import useTitle from "../../hooks/useTitle";
+import Header from "../../layout/header/Header";
 function Login() {
   const [, ,] = useTitle("Login");
   const Redirect = useNavigate();
@@ -16,6 +17,7 @@ function Login() {
       <div className="ui field">
         <br></br>
         <br></br>
+        <Header />
         <br></br>
         <br></br>
         <div className="ui raised centered card">

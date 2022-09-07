@@ -20,9 +20,8 @@ function App() {
             element={
               <div>
                 <header className="App-header">Resume Builder</header>
-                <Link to="/sign-up">Sign Up</Link>
-                <Link to="/login">Login</Link>
-                <Link to="/create">Create</Link>
+                <Link to="/sign-up">Sign Up</Link>{" "}
+                <Link to="/login">Login</Link> <Link to="/create">Create</Link>
               </div>
             }
           />
