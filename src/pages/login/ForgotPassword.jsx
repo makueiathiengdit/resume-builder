@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+
 import Button from "../../components/common/button/Button";
 import FormWrapper from "../../components/common/form/FormWrapper";
 import Input from "../../components/common/input/Input";
@@ -9,9 +11,23 @@ function ForgotPassword() {
   const [, ,] = useTitle("Forgot password");
   const Redirect = useNavigate();
   const handleClick = () => {
+    toast.promise(
+      new Promise(function (resolve, reject) {
+        setTimeout(() => resolve("done"), 800);
+      }),
+      {
+        loading: "sending recovery link",
+        success: "done",
+        error: "Error sending link",
+      }
+    );
+
     console.log("Redirecting to login...");
-    Redirect("/change-password");
+    setTimeout(() => {
+      Redirect("/change-password");
+    }, 1500);
   };
+
   return (
     <div className="ui container">
       <br></br>
@@ -19,6 +35,8 @@ function ForgotPassword() {
       <br></br>
       <br></br>
       <br></br>
+      <Toaster />
+
       <div className="ui centered card">
         <div className="content">
           <ErrorBoundary>

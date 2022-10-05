@@ -21,7 +21,10 @@ function App() {
             path="/"
             element={
               <div>
-                <header className="App-header">Resume Builder</header>
+                <header className="App-header">
+                  <h1>Resume Builder</h1>
+                  <p>Coming soon</p>
+                </header>
                 <Link to="/sign-up">Sign Up</Link>{" "}
                 <Link to="/login">Login</Link> <Link to="/create">Create</Link>
               </div>

@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/common/button/Button";
-
 import Input from "../../components/common/input/Input";
 import useTitle from "../../hooks/useTitle";
 import Header from "../../layout/header/Header";
+import {
+  validatePassword,
+  validateConfirmPassword,
+  validateEmail,
+} from "../../constants/Constants";
+
 function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [, ,] = useTitle("Login");
   const Redirect = useNavigate();
+
   const handleClick = () => {
     console.log("Redirecting to home...");
+    console.log(username, password);
     Redirect("/home");
   };
   return (
@@ -29,15 +38,20 @@ function Login() {
                   id="username"
                   label="Username"
                   type="text"
+                  value={username}
                   placeholder="e.g deng@gmail.com"
                   required={true}
+                  onBlur={(id, value) => setUsername(value)}
                 />
                 <Input
                   id="password"
                   label="Password"
                   type="password"
+                  value={password}
                   placeholder="Enter your password"
                   required={true}
+                  isPassword={true}
+                  onBlur={(id, value) => setPassword(value)}
                 />
                 <Link to="/forgot-password">Forgot Password?</Link>
               </div>
