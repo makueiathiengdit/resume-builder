@@ -73,3 +73,18 @@ export function validateConfirmPassword(password, confirmPassword) {
 export function validateStringInput(text) {
   return text.length > 0;
 }
+
+export function fetchData(key) {
+  return JSON.parse(localStorage.getItem(key)) ?? [];
+}
+
+export function storeData(key, value) {
+  console.log(`Storing: ${key}`);
+  if (localStorage.getItem(key)) deleteData(key);
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+export function deleteData(key) {
+  console.log(`Deleting: ${key}`);
+  localStorage.removeItem(key);
+}

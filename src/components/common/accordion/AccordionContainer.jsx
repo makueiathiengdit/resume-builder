@@ -1,41 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Accordion from "./Accordion";
 
 function AccordionContainer({ data = [] }) {
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    setItems([
-      {
-        startDate: "04-2020",
-        endDate: "04-2022",
-        employer: "Kush Bank",
-        jobTitle: "Branch Manager",
-        description: [
-          "Managing employees",
-          "Running branch operations",
-          "Making decisions regarding branch and employees",
-        ],
-      },
-      {
-        startDate: "04-2020",
-        endDate: "04-2022",
-        employer: "Kush Bank",
-        jobTitle: "Branch Manager",
-        description: [
-          "Managing employees",
-          "Running branch operations",
-          "Making decisions regarding branch and employees",
-        ],
-      },
-    ]);
-  }, []);
-
+  console.log(data);
   return (
     <div className="ui container">
       <div className="ui styled fluid accordion">
-        {items.length === 0 && <h2>No data</h2>}
-        {items.map((item, index) => (
-          <Accordion item={item} key={index} />
+        {data.length === 0 && <h2>No data</h2>}
+
+        {data.map((item, index) => (
+          <Accordion
+            title={item.year}
+            body={
+              <div>
+                <h4>School: {item.school}</h4>
+                <h4>Award: {item.award}</h4>{" "}
+              </div>
+            }
+          />
         ))}
       </div>
     </div>

@@ -1,41 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
+import { fetchData, storeData } from "../../../utils/Functions";
+import AccordionContainer from "../accordion/AccordionContainer";
 import Button from "../button/Button";
-import NextButton from "../button/NextButton";
+
 import Input from "../input/Input";
 function EducationForm() {
-  let dummyData = {};
-  const handleBlur = () => {};
+  const [data, setData] = useState(() => fetchData("education"));
+  const [clearInput, setClearInput] = useState(false);
+  // console.log("education", data);
+  let tempData = [];
+  data.map((item, index) => console.log(item));
+
+  const handleBlur = (id, value) => {
+    // console.log("received", id, value);
+
+    tempData.push({ id, value });
+    setData(data);
+  };
+  const handleAdd = () => {
+    console.log("Temp data", tempData);
+    let d = data;
+    d.push(tempData);
+    storeData("education", d);
+    setData(d);
+    setClearInput(true);
+  };
+
   return (
     <div>
       <div className="ui field">
+        <AccordionContainer data={data} />
         <Input
           label="Year"
           type="text"
           id="year"
           placeholder="e.g 2018"
-          passedValue={dummyData.firstname}
+          value={""}
           onBlur={handleBlur}
+          shouldClearInput={clearInput}
         />
         <Input
-          label="Insitution"
+          label="Insitute/School"
           type="text"
-          id="lastname"
+          id="school"
           placeholder="e.g University of Juba"
-          passedValue={dummyData.lastname}
+          value={""}
           onBlur={handleBlur}
+          shouldClearInput={clearInput}
         />
         <Input
           label="Certificate/Award"
           type="text"
           id="award"
           placeholder="e.g BS. Education"
-          passedValue={dummyData.lastname}
+          value={""}
           onBlur={handleBlur}
+          shouldClearInput={clearInput}
         />
-        <Button text="Add" />
+        <Button text="Add" onClick={handleAdd} />
       </div>
-      <NextButton text={"Prev"} direction="left" />
-      <NextButton text={"Next"} />
     </div>
   );
 }

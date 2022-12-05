@@ -1,5 +1,5 @@
 import React from "react";
-import NextButton from "../button/NextButton";
+
 import Input from "../input/Input";
 function PersonalInfoForm() {
   const dummyData = {
@@ -55,8 +55,6 @@ function PersonalInfoForm() {
             onBlur={handleBlur}
           />
         </div>
-        {/* <NextButton text={"Prev"} direction="left" /> */}
-        <NextButton text={"Next"} />
       </div>
     </>
   );

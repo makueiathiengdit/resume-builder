@@ -64,7 +64,7 @@ function Steps({ currentStep, onClick }) {
               key={index}
               onClick={(e) => {
                 e.preventDefault();
-                onClick(index);
+                onClick(index + 1);
               }}
             >
               <div className="content">

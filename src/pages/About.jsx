@@ -6,8 +6,13 @@ function About() {
 
   return (
     <div className="ui container">
-      <Header />
-      <h2>About Page</h2>
+      <div className="App">
+        <Header />
+        <div className="App-header">
+          <h1>About Page</h1>
+          <p>coming soon</p>
+        </div>
+      </div>
     </div>
   );
 }

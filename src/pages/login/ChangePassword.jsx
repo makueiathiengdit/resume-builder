@@ -26,10 +26,10 @@ function ChangePassword() {
         <div className="content">
           <FormWrapper title="Create Password">
             <ErrorBoundary>
-              {/* <div className="meta">
+              <div className="middle aligned meta">
                 <p>Create new password</p>
               </div>
-              <br></br> */}
+              <br></br>
               <div className="ui field">
                 <Input
                   id="password"

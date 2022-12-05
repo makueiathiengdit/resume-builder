@@ -9,6 +9,7 @@ function Input({
   required = true,
   placeholder,
   onBlur,
+  shouldClearInput = false,
 }) {
   const [_value, setValue] = useState(value);
   const [error, setError] = useState(false);
@@ -28,7 +29,11 @@ function Input({
       return;
     }
     setError(false);
+    console.log("inside input button");
+    console.log("id, value", id, _value);
     onBlur(id, _value);
+
+    if (shouldClearInput) setValue("");
   };
 
   const handleToggle = () => {

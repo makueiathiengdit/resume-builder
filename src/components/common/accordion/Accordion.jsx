@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-function Accordion({ item }) {
+function Accordion({ title, body }) {
   const [isActive, setIsActive] = useState(false);
-  console.log("Called with: ", item);
+  console.log("Called with: ", title);
   const toggle = (e) => {
     setIsActive(!isActive);
     console.log(e);
@@ -10,17 +10,19 @@ function Accordion({ item }) {
     <>
       <div className={`${isActive ? "active" : ""} title`} onClick={toggle}>
         <i className="dropdown icon"></i>
-        <span>
+        {title}
+        {/* <span>
           {item?.startDate + " - " + item?.endDate + " " + item?.jobTitle}
-        </span>
+        </span> */}
       </div>
       <div className={`${isActive ? "active" : ""} content`}>
-        <h5 className="header">Responsibilities</h5>
-        <ul className="ui list">
+        {/* <h5 className="header">Responsibilities</h5> */}
+        {/* <ul className="ui list">
           {item?.description.map((desc, index) => (
             <li key={index}>{desc}</li>
           ))}
-        </ul>
+        </ul> */}
+        {body}
       </div>
     </>
   );
